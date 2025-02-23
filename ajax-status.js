@@ -8,6 +8,10 @@ function displayResponse(json) {
 }
 
 const ajax = new XMLHttpRequest();
+ajax.onreadystatechange = function () {
+    console.info(`Ready state change ${ajax.readyState}`);
+}
+
 ajax.open('GET', 'api/data.json');
 // ajax.open('GET', 'api/salah.json');
 ajax.addEventListener('load', function () {
